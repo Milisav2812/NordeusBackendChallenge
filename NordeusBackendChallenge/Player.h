@@ -7,10 +7,11 @@ class Player
 public:
 	// Construtor
 	Player(int Rating, PlayerRole Role);
+	Player():Rating(0),Role(PlayerRole::Forward) {}
 
 	// Getters
-	int GetRating() { return Rating; }
-	PlayerRole GetRole() { return Role; }
+	int GetRating() const { return Rating; }
+	PlayerRole GetRole() const { return Role; }
 
 	// Used for std::sort
 	bool operator <(const Player& Player2) const;

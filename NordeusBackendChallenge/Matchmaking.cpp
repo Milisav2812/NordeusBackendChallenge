@@ -35,9 +35,7 @@ void Matchmaking::PrintMatchmaking(const std::vector<std::pair<Club, Club>>& Fin
 		Club Club1 = std::get<0>(FinalMatching[i]);
 		Club Club2 = std::get<1>(FinalMatching[i]);
 
-		std::cout << "Strongest Rating: " << Club1.GetStrongestAverageRating() << std::endl;
-		//Club1.PrintStrongestTeam();
-		std::cout << "Strongest Rating: " << Club2.GetStrongestAverageRating() << std::endl;
-		//Club2.PrintStrongestTeam();
+		Club1.PrintStrongestTeam();
+		Club2.PrintStrongestTeam();
 	}
 }
