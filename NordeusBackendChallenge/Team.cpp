@@ -4,12 +4,12 @@
 
 Team::Team(std::vector<Player> Goalkeeper,
 		   std::vector<Player> Forward,
-		   std::vector<Player> Middfield,
+		   std::vector<Player> Midfield,
 		   std::vector<Player> Back)
 {
 	this->Goalkeeper = Goalkeeper[0];
 	this->Forward = Forward;
-	this->Middfield = Middfield;
+	this->Midfield = Midfield;
 	this->Back = Back;
 }
 
@@ -21,9 +21,9 @@ double Team::CalculateAverageRating()
 	{
 		Rating += Forward[i].GetRating();
 	}
-	for (int i = 0; i < Middfield.size(); i++)
+	for (int i = 0; i < Midfield.size(); i++)
 	{
-		Rating += Middfield[i].GetRating();
+		Rating += Midfield[i].GetRating();
 	}
 	for (int i = 0; i < Back.size(); i++)
 	{
@@ -44,8 +44,8 @@ void Team::Print() const
 	}
 	std::cout << "]" << std::endl;
 
-	std::cout << "MiddField [ ";
-	for (auto Player : Middfield)
+	std::cout << "Midfield [ ";
+	for (auto Player : Midfield)
 	{
 		std::cout << Player.GetRating() << " ";
 	}

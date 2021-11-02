@@ -33,12 +33,12 @@ Team Club::FormStrongestTeam(const std::vector<Player>& Players)
 	AddNumberOfPlayersByRole(Goalkeeper, Players, PlayerRole::Goalkeeper, 1);
 	std::vector<Player> Forward;
 	AddNumberOfPlayersByRole(Forward, Players, PlayerRole::Forward, 2);
-	std::vector<Player> Middfield;
-	AddNumberOfPlayersByRole(Middfield, Players, PlayerRole::MiddField, 4);
+	std::vector<Player> Midfield;
+	AddNumberOfPlayersByRole(Midfield, Players, PlayerRole::MidField, 4);
 	std::vector<Player> Back;
 	AddNumberOfPlayersByRole(Back, Players, PlayerRole::Back, 4);
 
-	return Team(Goalkeeper, Forward, Middfield, Back);
+	return Team(Goalkeeper, Forward, Midfield, Back);
 }
 
 /* Receive players from TeamIn and transfer them to TeamOut */
@@ -118,8 +118,8 @@ void Club::PrintVector(const std::vector<Player>& Team)
 	}
 	std::cout << "]" << std::endl;
 
-	TempVector = GetAllPlayersOfTheSameRole(Team, PlayerRole::MiddField);
-	std::cout << "MiddField [ ";
+	TempVector = GetAllPlayersOfTheSameRole(Team, PlayerRole::MidField);
+	std::cout << "Midfield [ ";
 	for (auto Player : TempVector)
 	{
 		std::cout << Player.GetRating() << " ";

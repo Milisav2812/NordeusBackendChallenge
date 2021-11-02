@@ -1,6 +1,6 @@
 #pragma once
-// Forward - 2, MiddField - 4, Back - 4, Goalkeeper - 1
-enum class PlayerRole {Forward, MiddField, Back, Goalkeeper};
+// Forward - 2, Midfield - 4, Back - 4, Goalkeeper - 1
+enum class PlayerRole {Forward, MidField, Back, Goalkeeper};
 
 class Player
 {
@@ -20,3 +20,5 @@ private:
 	int Rating; // Between 0 and 100
 	PlayerRole Role;
 };
+
+

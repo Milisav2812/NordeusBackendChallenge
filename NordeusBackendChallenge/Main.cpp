@@ -43,7 +43,7 @@ vector<Player> GenerateRandomTeam()
 
 	for (i = 0; i < 8; i++)
 	{
-		Player NewPlayer = Player(rand() % 101, PlayerRole::MiddField);
+		Player NewPlayer = Player(rand() % 101, PlayerRole::MidField);
 		NewTeam.push_back(NewPlayer);
 	}
 
