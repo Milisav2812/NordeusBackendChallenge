@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <iostream>
 
+using namespace std;
+
 std::vector<std::pair<Club, Club>> Matchmaking::MatchPlayers(std::vector<Club> Players)
 {
 	if (Players.size() < 2)
@@ -15,7 +17,7 @@ std::vector<std::pair<Club, Club>> Matchmaking::MatchPlayers(std::vector<Club> P
 
 	int Size = (Players.size() % 2 == 0) ? Players.size() : ( Players.size() - 1 );
 
-	for (int i = 0; i < Players.size(); i = i+2)
+	for (int i = 0; i < Size; i = i+2)
 	{
 		std::pair<Club, Club> NewPair = { Players[i], Players[i+1] };
 		FinalMatching.push_back(NewPair);
@@ -31,11 +33,13 @@ void Matchmaking::PrintMatchmaking(const std::vector<std::pair<Club, Club>>& Fin
 	std::cout << "########################## MATCHMAKING ##########################" << std::endl;
 	for (int i = 0; i < FinalMatching.size(); i++)
 	{
-		std::cout << "Pair " << i+1 << "." << std::endl;
+		std::cout << "----------------------------- Pair " << i+1 << ". ----------------------------" << std::endl;
 		Club Club1 = std::get<0>(FinalMatching[i]);
 		Club Club2 = std::get<1>(FinalMatching[i]);
 
+		std::cout << "TEAM 1" << std::endl;
 		Club1.PrintStrongestTeam();
+		std::cout << "TEAM 2" << std::endl;
 		Club2.PrintStrongestTeam();
 	}
 }

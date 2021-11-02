@@ -4,19 +4,18 @@
 
 using namespace std;
 
+#define NUMBER_OF_CLUBS 30
+
 vector<Player> GenerateRandomTeam();
 
 int main()
 {
 	Matchmaking m;
-
-	vector<Player> TestTeam;
-
 	std::vector<Club> CompetingClubs;
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < NUMBER_OF_CLUBS; i++)
 	{
-		TestTeam = GenerateRandomTeam();
+		vector<Player> TestTeam = GenerateRandomTeam();
 		Club TempClub (TestTeam);
 		CompetingClubs.push_back(TempClub);
 	}
